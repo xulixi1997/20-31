@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>济南鑫佑网络科技有限公司 | 智能供应链与信息系统专家</title>
+    <meta name="description" content="济南鑫佑网络科技有限公司专注于供应链管理优化与企业信息系统开发，提供从WMS、ERP到数据分析的全链路数字化解决方案。">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans SC', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#2563eb',
+                            accent: '#f97316', // 橙色提亮
+                            light: '#f8fafc',
+                            gray: '#64748b'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1')",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .section-padding { padding-top: 5rem; padding-bottom: 5rem; }
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        /* 隐藏滚动条但允许滚动 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- 1. Top Bar (顶部联系条) -->
+    <div class="bg-brand-dark text-slate-300 text-xs py-2 hidden md:block border-b border-slate-700">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fas fa-map-marker-alt mr-2 text-brand-accent"></i>济南市长清区文昌街道长泰大厦东裙楼二楼206-2室</span>
+                <span><i class="fas fa-envelope mr-2 text-brand-accent"></i>contact@jinanxinyounet.asia</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-weixin"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-weibo"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar (导航栏) -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center text-xl font-bold group-hover:bg-brand-accent transition-colors">
+                    X
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold text-slate-900 tracking-tight leading-none">鑫佑网络</span>
+                    <span class="text-[10px] text-slate-500 font-medium tracking-widest uppercase">Xinyou Network</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-brand-primary transition">首页</a>
+                <a href="#about" class="hover:text-brand-primary transition">关于我们</a>
+                <a href="#services" class="hover:text-brand-primary transition">核心服务</a>
+                <a href="#solutions" class="hover:text-brand-primary transition">解决方案</a>
+                <a href="#cases" class="hover:text-brand-primary transition">成功案例</a>
+                <a href="#news" class="hover:text-brand-primary transition">行业洞察</a>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-primary text-white rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">联系我们</a>
+            </div>
+
+            <!-- Mobile Button -->
+            <button class="lg:hidden text-2xl text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t lg:hidden">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="block text-slate-600 hover:text-brand-primary">首页</a>
+                <a href="#about" class="block text-slate-600 hover:text-brand-primary">关于我们</a>
+                <a href="#services" class="block text-slate-600 hover:text-brand-primary">核心服务</a>
+                <a href="#contact" class="block text-brand-primary font-bold">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3. Hero Section (首屏) -->
+    <header id="home" class="relative h-[85vh] min-h-[600px] bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+        <div class="container mx-auto px-6 relative z-10 text-white">
+            <div class="max-w-3xl">
+                <div class="inline-block px-3 py-1 mb-6 border border-brand-accent/50 rounded-full text-brand-accent text-sm font-semibold tracking-wide backdrop-blur-sm">
+                    🚀 赋能企业供应链数字化转型
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 tracking-tight">
+                    链接复杂世界<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">重构数据价值</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+                    济南鑫佑网络科技有限公司，致力于为现代企业打造高韧性供应链管理体系与定制化信息系统，让数据流动成为驱动业务增长的核心引擎。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-brand-primary text-white rounded-lg font-semibold text-center hover:bg-blue-600 transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+                        立即咨询 <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#services" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-lg font-semibold text-center hover:bg-white/20 transition flex items-center justify-center gap-2">
+                        <i class="fas fa-play-circle"></i> 探索解决方案
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-50 to-transparent"></div>
+    </header>
+
+    <!-- 4. Trusted By / Partner Logos (信任背书) -->
+    <section class="py-10 bg-white border-b border-slate-100">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-sm text-slate-400 font-semibold mb-6 tracking-widest uppercase">技术合作伙伴 & 生态联盟</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <i class="fab fa-aws text-4xl hover:text-[#FF9900]"></i>
+                <i class="fab fa-google text-3xl hover:text-[#4285F4]"></i>
+                <i class="fab fa-microsoft text-3xl hover:text-[#F25022]"></i>
+                <i class="fab fa-salesforce text-4xl hover:text-[#00A1E0]"></i>
+                <i class="fab fa-docker text-4xl hover:text-[#2496ED]"></i>
+                <i class="fas fa-truck-loading text-3xl text-slate-600"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. About Us Summary (关于我们简述) -->
+    <section id="about" class="section-padding bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-brand-primary/20 rounded-2xl transform rotate-2 group-hover:rotate-1 transition-transform duration-300"></div>
+                    <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Team meeting" class="relative rounded-xl shadow-2xl w-full object-cover h-[500px]">
+                    <div class="absolute bottom-10 -right-6 bg-white p-6 rounded-lg shadow-xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">100% 交付率</h4>
+                                <p class="text-xs text-slate-500">承诺每一个项目的完美落地</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-brand-primary font-bold uppercase tracking-widest mb-3">关于鑫佑网络</h5>
+                    <h2 class="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">立足济南，<br>服务全球供应链革新</h2>
+                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">
+                        济南鑫佑网络科技有限公司坐落于山东省济南市长清区，是一家专注于**供应链管理（SCM）**与**企业级信息系统开发**的高新技术企业。
+                    </p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        在这个万物互联的时代，我们深知“连接”的力量。无论是复杂的物流节点，还是海量的库存数据，我们通过自研的智能算法与定制化开发服务，帮助制造与流通企业打破信息孤岛，实现降本增效。
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fas fa-check-circle text-brand-primary"></i> 深度定制的 ERP & WMS 系统
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fas fa-check-circle text-brand-primary"></i> 数据驱动的供应链可视化大屏
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fas fa-check-circle text-brand-primary"></i> 7*24小时本地化技术支持
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-brand-primary font-bold hover:text-brand-accent transition inline-flex items-center gap-2 border-b-2 border-brand-primary pb-1">
+                        了解我们的发展历程 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Key Statistics (数据统计) -->
+    <section class="py-16 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/20 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-slate-700/50">
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-brand-primary mb-2">50+</div>
+                    <div class="text-sm text-slate-400 font-medium">企业合作伙伴</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-brand-accent mb-2">120%</div>
+                    <div class="text-sm text-slate-400 font-medium">平均效率提升</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-blue-400 mb-2">10TB+</div>
+                    <div class="text-sm text-slate-400 font-medium">年处理数据量</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-black text-teal-400 mb-2">24/7</div>
+                    <div class="text-sm text-slate-400 font-medium">全天候响应</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Core Services (核心服务 - Grid Layout) -->
+    <section id="services" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h5 class="text-brand-primary font-bold uppercase tracking-widest mb-3">我们的服务</h5>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">全栈式供应链数字化服务</h2>
+                <p class="text-slate-500">从底层架构到顶层应用，我们提供端到端的解决方案。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group p-8 rounded-2xl bg-white border border-slate-100 hover:border-brand-primary/30 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-blue-100 text-brand-primary rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">智能仓储管理 (WMS)</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                            利用RFID与条码技术，实现库存精准定位、出入库自动化管理，大幅降低库存积压与损耗。
+                        </p>
+                        <a href="#" class="text-brand-primary font-semibold text-sm hover:underline">查看详情 &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group p-8 rounded-2xl bg-white border border-slate-100 hover:border-brand-primary/30 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-orange-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-orange-100 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">供应链协同平台</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                            打通供应商、制造商、分销商之间的信息壁垒，实现订单流、物流流、资金流的“三流合一”可视化。
+                        </p>
+                        <a href="#" class="text-brand-accent font-semibold text-sm hover:underline">查看详情 &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group p-8 rounded-2xl bg-white border border-slate-100 hover:border-brand-primary/30 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-teal-50 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">定制化软件开发</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                            针对企业特定业务场景，提供Java/Python/Go等技术栈的后端开发及React/Vue前端交互设计。
+                        </p>
+                        <a href="#" class="text-teal-600 font-semibold text-sm hover:underline">查看详情 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More Services Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <!-- Service 4 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-md transition border border-transparent hover:border-slate-200">
+                    <i class="fas fa-chart-line text-3xl text-slate-400 mb-4"></i>
+                    <h4 class="font-bold text-slate-800 mb-2">大数据分析 BI</h4>
+                    <p class="text-sm text-slate-500">将沉睡的数据转化为可视化的决策报表。</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-md transition border border-transparent hover:border-slate-200">
+                    <i class="fas fa-mobile-alt text-3xl text-slate-400 mb-4"></i>
+                    <h4 class="font-bold text-slate-800 mb-2">移动端应用 APP/小程序</h4>
+                    <p class="text-sm text-slate-500">随时随地管理业务，赋能一线员工。</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-md transition border border-transparent hover:border-slate-200">
+                    <i class="fas fa-cloud text-3xl text-slate-400 mb-4"></i>
+                    <h4 class="font-bold text-slate-800 mb-2">云架构部署</h4>
+                    <p class="text-sm text-slate-500">安全、弹性、高可用的云端基础设施搭建。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Feature Highlight: SCM (特色展示 - 左图右文) -->
+    <section class="section-padding bg-slate-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -left-10 -top-10 w-40 h-40 bg-dots-pattern opacity-20"></div>
+                    <img src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Supply Chain Visualization" class="rounded-2xl shadow-2xl relative z-10 w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-brand-accent text-white p-4 rounded-lg shadow-lg z-20">
+                        <p class="font-bold text-2xl">30%</p>
+                        <p class="text-xs">物流成本降低</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-bold text-slate-900 mb-6">智慧物流，<br>不仅是“运送”更是“预测”</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        传统的物流是被动响应，鑫佑网络的智慧物流系统具备预测能力。通过分析历史数据与实时路况，我们为您规划最优路径，预警潜在延误。
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <div class="mt-1"><i class="fas fa-satellite-dish text-brand-primary"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">实时追踪</h4>
+                                <p class="text-sm text-slate-500">货物位置毫秒级更新，全程可视化监控。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1"><i class="fas fa-brain text-brand-primary"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-800">智能调度</h4>
+                                <p class="text-sm text-slate-500">AI算法自动匹配车辆与货源，减少空驶率。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Feature Highlight: Tech (特色展示 - 右图左文) -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                <div class="lg:w-1/2">
+                     <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coding and Development" class="rounded-2xl shadow-2xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-3xl font-bold text-slate-900 mb-6">稳健的系统架构，<br>支撑企业高速扩张</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        我们不仅仅是写代码，更是在构建企业的数字基石。鑫佑技术团队遵循国际软件工程标准，确保交付的每一个系统都具备高可用性与高扩展性。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                            <h4 class="font-bold text-slate-800 mb-1">微服务架构</h4>
+                            <p class="text-xs text-slate-500">模块解耦，灵活迭代</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                            <h4 class="font-bold text-slate-800 mb-1">数据安全</h4>
+                            <p class="text-xs text-slate-500">金融级加密，多地容灾</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Development Process (流程图) -->
+    <section class="section-padding bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">标准化交付流程</h2>
+                <p class="text-slate-400">从需求到上线，每一步都精益求精</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+                <!-- Line connecting steps (Desktop only) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-700 -z-0"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 text-center group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 border-2 border-brand-primary rounded-full flex items-center justify-center text-xl mb-4 group-hover:bg-brand-primary transition-colors">1</div>
+                    <h4 class="font-bold mb-2">需求调研</h4>
+                    <p class="text-xs text-slate-400 px-2">深入业务现场，理解真实痛点</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative z-10 text-center group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 border-2 border-brand-primary rounded-full flex items-center justify-center text-xl mb-4 group-hover:bg-brand-primary transition-colors">2</div>
+                    <h4 class="font-bold mb-2">方案设计</h4>
+                    <p class="text-xs text-slate-400 px-2">输出原型图与技术架构文档</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative z-10 text-center group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 border-2 border-brand-primary rounded-full flex items-center justify-center text-xl mb-4 group-hover:bg-brand-primary transition-colors">3</div>
+                    <h4 class="font-bold mb-2">敏捷开发</h4>
+                    <p class="text-xs text-slate-400 px-2">双周迭代，定期汇报进度</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="relative z-10 text-center group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 border-2 border-brand-primary rounded-full flex items-center justify-center text-xl mb-4 group-hover:bg-brand-primary transition-colors">4</div>
+                    <h4 class="font-bold mb-2">测试部署</h4>
+                    <p class="text-xs text-slate-400 px-2">自动化测试，平滑上线</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="relative z-10 text-center group">
+                    <div class="w-16 h-16 mx-auto bg-slate-800 border-2 border-brand-primary rounded-full flex items-center justify-center text-xl mb-4 group-hover:bg-brand-primary transition-colors">5</div>
+                    <h4 class="font-bold mb-2">运维支持</h4>
+                    <p class="text-xs text-slate-400 px-2">长期维护，持续优化升级</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Tech Stack (技术栈) -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-slate-800 mb-10">我们的技术武器库</h3>
+            <div class="flex flex-wrap justify-center gap-6">
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">Java Spring Boot</span>
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">Python AI</span>
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">React.js</span>
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">Vue 3</span>
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">Docker / K8s</span>
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">MySQL / Redis</span>
+                <span class="px-6 py-3 bg-slate-50 rounded-full text-slate-600 border border-slate-200 font-semibold text-sm hover:border-brand-primary hover:text-brand-primary transition cursor-default">Flutter</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Case Studies (案例展示) -->
+    <section id="cases" class="section-padding bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h5 class="text-brand-primary font-bold uppercase tracking-widest mb-2">成功案例</h5>
+                    <h2 class="text-3xl font-bold text-slate-900">我们如何帮助客户成功</h2>
+                </div>
+                <a href="#" class="hidden md:block text-slate-500 hover:text-brand-primary transition">查看全部案例 <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="h-48 overflow-hidden relative">
+                         <div class="absolute inset-0 bg-slate-900/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
+                            <span class="text-white border border-white px-4 py-2 rounded-full text-sm">查看详情</span>
+                         </div>
+                        <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Factory">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-brand-primary bg-blue-50 px-2 py-1 rounded mb-3 inline-block">智能制造</span>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">某大型汽配厂MES生产管理系统</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">通过引入物联网传感器与MES系统，实现了生产线的全流程数字化，生产效率提升25%，废品率降低15%。</p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="h-48 overflow-hidden relative">
+                         <div class="absolute inset-0 bg-slate-900/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
+                            <span class="text-white border border-white px-4 py-2 rounded-full text-sm">查看详情</span>
+                         </div>
+                        <img src="https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Warehouse">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-brand-accent bg-orange-50 px-2 py-1 rounded mb-3 inline-block">仓储物流</span>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">区域连锁超市智能WMS系统</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">为山东省内200家连锁超市打造统一仓储调度平台，优化了拣货路径，实现了库存实时共享与自动补货预警。</p>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group">
+                    <div class="h-48 overflow-hidden relative">
+                         <div class="absolute inset-0 bg-slate-900/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
+                            <span class="text-white border border-white px-4 py-2 rounded-full text-sm">查看详情</span>
+                         </div>
+                        <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Data Dashboard">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-teal-600 bg-teal-50 px-2 py-1 rounded mb-3 inline-block">数据中台</span>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">供应链数据可视化大屏</h3>
+                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">整合ERP、CRM及物流系统数据，构建企业级驾驶舱，帮助管理层实时掌握运营动态，辅助科学决策。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Team (团队介绍) -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h5 class="text-brand-primary font-bold uppercase tracking-widest mb-3">专业团队</h5>
+            <h2 class="text-3xl font-bold text-slate-900 mb-12">技术与行业的跨界融合</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-slate-100 group-hover:border-brand-primary transition">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="CEO" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg">李明远</h4>
+                    <p class="text-brand-primary text-sm mb-2">创始人 & CEO</p>
+                    <p class="text-slate-500 text-xs">15年供应链管理经验，原500强企业物流总监。</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-slate-100 group-hover:border-brand-primary transition">
+                        <img src="https://images.pexels.com/photos/1181682/pexels-photo-1181682.jpeg?auto=compress&cs=tinysrgb&w=400" alt="CTO" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg">张晓慧</h4>
+                    <p class="text-brand-primary text-sm mb-2">技术总监</p>
+                    <p class="text-slate-500 text-xs">资深全栈架构师，主导过多个千万级系统开发。</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-slate-100 group-hover:border-brand-primary transition">
+                        <img src="https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Product Manager" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg">王强</h4>
+                    <p class="text-brand-primary text-sm mb-2">产品总监</p>
+                    <p class="text-slate-500 text-xs">专注于B端产品体验设计与业务流程优化。</p>
+                </div>
+                 <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-slate-100 group-hover:border-brand-primary transition">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Operations" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg">陈雨菲</h4>
+                    <p class="text-brand-primary text-sm mb-2">客户成功经理</p>
+                    <p class="text-slate-500 text-xs">致力于为每一位客户提供超越预期的服务体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Testimonials (客户评价) -->
+    <section class="py-20 bg-brand-primary/5">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">客户的声音</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-sm relative">
+                    <i class="fas fa-quote-left text-4xl text-slate-200 absolute top-4 left-4"></i>
+                    <p class="text-slate-600 italic mb-6 relative z-10">"鑫佑网络的团队非常专业，他们不仅懂技术，更懂我们的业务。新上线的库存系统让我们每年的管理成本下降了20%以上。"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h5 class="font-bold text-slate-900">刘总</h5>
+                            <p class="text-xs text-slate-500">山东某物流集团 总经理</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm relative">
+                    <i class="fas fa-quote-left text-4xl text-slate-200 absolute top-4 left-4"></i>
+                    <p class="text-slate-600 italic mb-6 relative z-10">"合作过程非常愉快，响应速度极快。定制化的报表功能解决了我们长期以来数据统计难的问题，非常推荐！"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-12 h-12 rounded-full">
+                        <div>
+                            <h5 class="font-bold text-slate-900">赵经理</h5>
+                            <p class="text-xs text-slate-500">某电商仓储中心 运营总监</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. FAQ (常见问题) -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">常见问题解答</h2>
+            </div>
+            <div class="space-y-4">
+                <details class="group p-6 bg-slate-50 rounded-xl cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-slate-800 list-none">
+                        <span>你们主要服务哪些行业的客户？</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 text-sm leading-relaxed">我们主要服务于制造业、物流仓储业、电商零售业以及需要数字化转型的传统商贸企业。</p>
+                </details>
+                <details class="group p-6 bg-slate-50 rounded-xl cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-slate-800 list-none">
+                        <span>开发一套定制系统需要多长时间？</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 text-sm leading-relaxed">这取决于项目的复杂程度。一般来说，轻量级系统需要4-8周，而复杂的大型ERP或WMS系统可能需要3-6个月。我们会在需求调研后提供详细的时间表。</p>
+                </details>
+                <details class="group p-6 bg-slate-50 rounded-xl cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-slate-800 list-none">
+                        <span>项目交付后提供售后服务吗？</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-slate-600 mt-4 text-sm leading-relaxed">当然。我们提供标准的为期一年的免费技术维护服务，包括Bug修复、系统巡检等。一年后，您可以选择签署维保协议以继续获得支持。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16. CTA (行动号召) -->
+    <section class="py-20 bg-gradient-to-r from-brand-primary to-blue-600 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">准备好开启数字化转型之旅了吗？</h2>
+            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">无论您是想优化现有供应链流程，还是从零构建信息系统，鑫佑网络都是您值得信赖的合作伙伴。</p>
+            <a href="#contact" class="inline-block px-10 py-4 bg-white text-brand-primary font-bold rounded-lg shadow-lg hover:bg-slate-100 transition transform hover:-translate-y-1">
+                免费获取方案咨询
+            </a>
+        </div>
+    </section>
+
+    <!-- 17. Contact Section (联系我们) -->
+    <section id="contact" class="section-padding bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
+                <!-- Contact Info -->
+                <div class="p-10 bg-brand-dark text-white flex flex-col justify-between relative overflow-hidden">
+                     <div class="absolute top-0 right-0 w-40 h-40 bg-brand-primary/20 rounded-full blur-3xl -mr-10 -mt-10"></div>
+                     <div>
+                        <h3 class="text-2xl font-bold mb-8">联系方式</h3>
+                        <p class="text-slate-400 mb-8 text-sm">如果您有任何业务需求或技术咨询，请随时联系我们，我们的团队将在24小时内回复。</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-brand-accent shrink-0">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase tracking-wider">电话</p>
+                                    <p class="font-semibold text-lg">13897356287</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-brand-accent shrink-0">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase tracking-wider">邮箱</p>
+                                    <p class="font-semibold">contact@jinanxinyounet.asia</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-brand-accent shrink-0">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 uppercase tracking-wider">地址</p>
+                                    <p class="font-semibold leading-relaxed">山东省济南市长清区文昌街道<br>长泰大厦东裙楼二楼206-2室</p>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     
+                     <div class="mt-12">
+                         <p class="text-sm text-slate-500 mb-4">关注我们</p>
+                         <div class="flex gap-4">
+                             <a href="#" class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center hover:bg-brand-primary transition"><i class="fab fa-weixin"></i></a>
+                             <a href="#" class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center hover:bg-brand-primary transition"><i class="fab fa-weibo"></i></a>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- Map/Form (Placeholder for Map visual) -->
+                <div class="p-10 relative">
+                    <form class="space-y-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">在线留言</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">姓名</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition" placeholder="您的姓名">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">电话</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition" placeholder="您的联系电话">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">邮箱</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition" placeholder="example@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">需求描述</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition" placeholder="请简要描述您的需求..."></textarea>
+                        </div>
+                        <button type="button" onclick="alert('感谢您的留言，我们会尽快联系您！')" class="w-full bg-slate-900 text-white font-bold py-4 rounded-lg hover:bg-slate-800 transition shadow-lg">发送留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18. Footer (页脚) -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="text-2xl font-bold text-white mb-4">鑫佑网络</div>
+                    <p class="text-sm leading-relaxed mb-6">我们致力于通过先进的信息技术与供应链管理经验，为企业创造可衡量的商业价值。</p>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-white transition">首页</a></li>
+                        <li><a href="#about" class="hover:text-white transition">关于我们</a></li>
+                        <li><a href="#services" class="hover:text-white transition">核心服务</a></li>
+                        <li><a href="#cases" class="hover:text-white transition">成功案例</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">联系我们</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">服务领域</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition">WMS仓储管理系统</a></li>
+                        <li><a href="#" class="hover:text-white transition">ERP企业资源计划</a></li>
+                        <li><a href="#" class="hover:text-white transition">供应链协同平台</a></li>
+                        <li><a href="#" class="hover:text-white transition">大数据可视化分析</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Small -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">联系我们</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-brand-primary"></i>
+                            <span>山东省济南市长清区文昌街道长泰大厦东裙楼二楼206-2室</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone mt-1 text-brand-primary"></i>
+                            <span>13897356287</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope mt-1 text-brand-primary"></i>
+                            <span>contact@jinanxinyounet.asia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2023 济南鑫佑网络科技有限公司 版权所有.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">隐私政策</a>
+                    <a href="#" class="hover:text-white">服务条款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS for Sticky Navbar & Smooth Scroll interactions -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach((el) => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
